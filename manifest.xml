@@ -7,7 +7,7 @@
   xsi:type="MailApp">
 
   <Id>f3f50d0b-1a2b-4c5d-9e6f-abcdef123456</Id>
-  <Version>1.0.0.0</Version>
+  <Version>1.0.0.1</Version>
   <ProviderName>Nyffels</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="OWA Linker"/>
