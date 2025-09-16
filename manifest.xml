@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OfficeApp
-        xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
-        xsi:type="MailApp">
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xsi:type="MailApp">
 
-  <Id>f3f50d0b-1a2b-4c5d-9e6f-abcdef123456</Id>
-  <Version>1.0.0.2</Version>
+  <Id>8c9d3a6b-1c7f-4f7a-bd62-93c7b6a5e4df</Id>
+  <Version>1.0.2.0</Version>
   <ProviderName>Nyffels Open Source</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="OWA Linker"/>
@@ -27,13 +27,21 @@
 
   <Permissions>ReadItem</Permissions>
 
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://nyffels-open-source.github.io/outlook-owa-linker/taskpane.html"/>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+
   <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
   </Rule>
 
   <VersionOverrides
-          xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
-          xsi:type="VersionOverridesV1_0">
+    xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+    xsi:type="VersionOverridesV1_0">
 
     <Hosts>
       <Host xsi:type="Mailbox">
@@ -95,9 +103,9 @@
       </bt:Urls>
 
       <bt:ShortStrings>
-        <bt:String id="groupLabel"    DefaultValue="OWA Linker"/>
-        <bt:String id="btnCopyLabel"  DefaultValue="Copy OWA Link"/>
-        <bt:String id="btnOpenLabel"  DefaultValue="Open by ID"/>
+        <bt:String id="groupLabel"   DefaultValue="OWA Linker"/>
+        <bt:String id="btnCopyLabel" DefaultValue="Copy OWA Link"/>
+        <bt:String id="btnOpenLabel" DefaultValue="Open by ID"/>
       </bt:ShortStrings>
 
       <bt:LongStrings>
