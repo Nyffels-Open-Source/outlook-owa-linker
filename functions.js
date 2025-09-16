@@ -11,11 +11,11 @@ function copy(text) {
   if (navigator.clipboard && navigator.clipboard.writeText) {
     return navigator.clipboard.writeText(text);
   }
-  const ta = document.createElement('textarea');
+  const ta = document.createElement("textarea");
   ta.value = text;
   document.body.appendChild(ta);
   ta.select();
-  document.execCommand('copy');
+  document.execCommand("copy");
   document.body.removeChild(ta);
   return Promise.resolve();
 }
@@ -25,7 +25,7 @@ function copyOwaLink(event) {
     const rid = restId(id);
     const link = owaLinkFromRestId(rid);
     copy(link).finally(() => event.completed());
-  } catch (e) {
+  } catch {
     event.completed();
   }
 }

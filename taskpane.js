@@ -17,7 +17,7 @@ function parseInputToId(input) {
       const parts = url.pathname.split("/").filter(Boolean);
       const idx = parts.findIndex(p => p.toLowerCase() === "read");
       if (idx >= 0 && parts[idx + 1]) return decodeURIComponent(parts[idx + 1]);
-    } catch (e) {
+    } catch {
       return null;
     }
   }
@@ -32,7 +32,7 @@ function openById(rid) {
   try {
     Office.context.mailbox.displayMessageForm(rid);
     setMsg("Opened in Outlook (if supported).", "ok");
-  } catch (e) {
+  } catch {
     const link = owaLinkFromRestId(rid);
     window.open(link, "_blank");
     setMsg("Client not supported — opened OWA in browser.", "ok");
@@ -45,9 +45,9 @@ async function copyCurrentOwaLink() {
   if (navigator.clipboard && navigator.clipboard.writeText) {
     await navigator.clipboard.writeText(link);
   } else {
-    const ta = document.createElement('textarea');
+    const ta = document.createElement("textarea");
     ta.value = link; document.body.appendChild(ta); ta.select();
-    document.execCommand('copy'); document.body.removeChild(ta);
+    document.execCommand("copy"); document.body.removeChild(ta);
   }
   setMsg("Copied current OWA link.", "ok");
 }

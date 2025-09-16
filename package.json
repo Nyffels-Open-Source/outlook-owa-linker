@@ -1,0 +1,9 @@
+{
+  "name": "outlook-owa-linker",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0"
+  }
+}
