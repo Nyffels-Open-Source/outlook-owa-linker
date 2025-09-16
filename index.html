@@ -1,158 +1,63 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Outlook OWA Linker — Install</title>
-    <meta name="description" content="Outlook Web Add-in to copy OWA links and open items by ID."/>
-    <style>
-        :root {
-            --bg: #0b1320;
-            --fg: #e6e9ef;
-            --card: #141b2d;
-            --muted: #93a1b1;
-            --accent: #4f8cff
-        }
-
-        * {
-            box-sizing: border-box
-        }
-
-        body {
-            margin: 0;
-            font: 16px/1.5 system-ui, Segoe UI, Roboto, Arial;
-            background: var(--bg);
-            color: var(--fg)
-        }
-
-        .wrap {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px
-        }
-
-        .card {
-            background: var(--card);
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .25)
-        }
-
-        h1 {
-            margin: 0 0 6px
-        }
-
-        h2 {
-            margin: 28px 0 10px
-        }
-
-        p {
-            color: var(--muted)
-        }
-
-        code, pre {
-            background: #0f1626;
-            border-radius: 8px;
-            padding: .2em .4em
-        }
-
-        a {
-            color: var(--accent)
-        }
-
-        .row {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap
-        }
-
-        .btn {
-            background: var(--accent);
-            color: #fff;
-            border: 0;
-            border-radius: 10px;
-            padding: 10px 14px;
-            cursor: pointer
-        }
-
-        .mono {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns:1fr;
-            gap: 14px
-        }
-
-        @media (min-width: 760px) {
-            .grid {
-                grid-template-columns:1fr 1fr
-            }
-        }
-
-        .small {
-            font-size: 12px;
-            color: #8ea2b3
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Outlook OWA Linker — Installatie</title>
+  <meta name="description" content="Outlook add-in om OWA-links te kopiëren en items te openen op ID." />
+  <style>
+    :root{--bg:#0b1320;--fg:#e6e9ef;--card:#141b2d;--muted:#93a1b1;--accent:#4f8cff}
+    *{box-sizing:border-box} body{margin:0;font:16px/1.55 system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--fg)}
+    .wrap{max-width:900px;margin:40px auto;padding:0 20px}
+    .card{background:var(--card);border-radius:16px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    h1{margin:0 0 6px} h2{margin:28px 0 10px} h3{margin:18px 0 8px}
+    p,li{color:var(--muted)} code{background:#0f1626;border-radius:6px;padding:.2em .4em}
+    a{color:var(--accent)} .btn{background:var(--accent);color:#fff;border:0;border-radius:10px;padding:10px 14px;cursor:pointer;text-decoration:none;display:inline-block}
+    .small{font-size:13px;color:#8ea2b3}
+    .list{margin:8px 0 0 20px}
+    .hr{height:1px;background:#213055;margin:22px 0}
+  </style>
 </head>
 <body>
-<main class="wrap">
+  <main class="wrap">
     <div class="card">
-        <h1>Outlook OWA Linker</h1>
-        <p>Outlook add-in to <strong>copy OWA links</strong> and <strong>open items by ID</strong>. Works in New Outlook
-            (Mac/Win) & Outlook on the web.</p>
+      <h1>Outlook OWA Linker</h1>
+      <p>Outlook add-in om <strong>OWA-deeplinks te kopiëren</strong> en <strong>items te openen op ID</strong>. Werkt in New Outlook (Mac/Win) & Outlook on the web.</p>
 
-        <h2>Install (sideload)</h2>
-        <ol>
-            <li>Open Outlook (web or new desktop) → <em>Get Add-ins</em> → <em>My add-ins</em> → <em>Add from URL</em>.
-            </li>
-            <li>Paste the manifest URL below → <em>Install</em>.</li>
-        </ol>
+      <div class="hr"></div>
 
-        <div class="grid">
-            <div>
-                <h3>Manifest URL</h3>
-                <p class="mono" id="u">https://nyffels-open-source.github.io/outlook-owa-linker/manifest.xml</p>
-                <button class="btn" onclick="copyU()">Copy URL</button>
-            </div>
-            <div>
-                <h3>Direct files</h3>
-                <ul>
-                    <li><a href="./manifest.xml">manifest.xml</a></li>
-                    <li><a href="./functions.html">functions.html</a></li>
-                    <li><a href="./taskpane.html">taskpane.html</a></li>
-                </ul>
-            </div>
-        </div>
+      <h2>Installatie (via bestand)</h2>
+      <ol class="list">
+        <li>Klik hieronder op <em>Download manifest</em>.</li>
+        <li>Open <strong>Outlook on the web</strong>: <a href="https://outlook.office.com" target="_blank" rel="noopener">outlook.office.com</a></li>
+        <li>Ga naar <em>Get Add-ins → My add-ins → Custom add-ins → Add from file</em>.</li>
+        <li>Selecteer het gedownloade <code>manifest.xml</code> bestand.</li>
+        <li>Klik op <em>Install</em> en sluit het venster.</li>
+      </ol>
 
-        <h2>Usage</h2>
-        <ul>
-            <li><strong>Copy OWA Link</strong> (ribbon): copies a stable OWA deeplink of the current message.</li>
-            <li><strong>Open by ID</strong> (taskpane): paste an <code>ItemId</code> or full OWA link → opens in
-                Outlook; if unsupported, falls back to OWA in a new tab.
-            </li>
-        </ul>
+      <p>
+        <a class="btn" href="./manifest.xml" download="manifest.xml">⬇️ Download manifest.xml</a>
+      </p>
 
-        <h2>Notes</h2>
-        <ul>
-            <li>OWA links always open in the browser (by design). Opening in the client uses
-                <code>displayMessageForm</code> with graceful fallback.
-            </li>
-            <li>Outlook caches add-ins. If you update, bump <code>&lt;Version&gt;</code> in <code>manifest.xml</code> to
-                force refresh.
-            </li>
-        </ul>
+      <p class="small">
+        Na installatie verschijnt de add-in ook in de desktop-app (zelfde account).  
+        <br />Broncode: <a href="https://github.com/Nyffels-Open-Source/outlook-owa-linker" target="_blank" rel="noopener">GitHub repo</a>
+      </p>
 
-        <p class="small">Source: <a href="https://github.com/Nyffels-Open-Source/outlook-owa-linker">GitHub repo</a></p>
+      <div class="hr"></div>
+
+      <h2>Gebruik</h2>
+      <ul class="list">
+        <li><strong>Copy OWA Link</strong> (ribbon): kopieert een stabiele OWA-deeplink van het huidige bericht.</li>
+        <li><strong>Open by ID</strong> (taskpane): plak een <code>ItemId</code> of volledige OWA-link → opent in Outlook; zo niet, valt terug op OWA (browser).</li>
+      </ul>
+
+      <h2>Opmerkingen</h2>
+      <ul class="list">
+        <li>OWA-links openen altijd in de browser (by design). De client-open gebruikt <code>displayMessageForm</code> met fallback.</li>
+        <li>Outlook cached add-ins. Bij updates: verhoog <code>&lt;Version&gt;</code> in <code>manifest.xml</code> om een refresh te forceren.</li>
+      </ul>
     </div>
-</main>
-<script>
-    function copyU() {
-        const t = document.getElementById('u').textContent.trim();
-        navigator.clipboard?.writeText(t);
-    }
-</script>
+  </main>
 </body>
 </html>
