@@ -1,0 +1,21 @@
+<!doctype html><meta charset="utf-8">
+<title>OWA Linker Selftest</title>
+<body style="font:14px system-ui;padding:16px">
+<h1>Self-test</h1>
+<pre id="out"></pre>
+<script>
+    const BASE = location.origin + location.pathname.replace(/\/[^/]*$/,'/');
+    const urls = [
+        "manifest.xml","functions.html","taskpane.html",
+        "assets/icon-16.png","assets/icon-32.png","assets/icon-80.png"
+    ];
+    (async ()=>{
+        const log = (...a)=>out.textContent += a.join(" ")+"\n";
+        for (const u of urls){
+            try{
+                const r = await fetch(BASE+u,{method:"HEAD"});
+                log(u, "→", r.status, r.ok ? "OK" : "FAIL", r.headers.get("content-type")||"");
+            }catch(e){ log(u, "→ ERROR", e+""); }
+        }
+    })();
+</script>
