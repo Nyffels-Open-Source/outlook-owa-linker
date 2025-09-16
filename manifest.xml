@@ -8,12 +8,12 @@
 
   <Id>f3f50d0b-1a2b-4c5d-9e6f-abcdef123456</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>Nyffels Dev</ProviderName>
+  <ProviderName>Nyffels</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="OWA Linker"/>
   <Description DefaultValue="Copy an OWA link or open any item by ID/link."/>
-  <IconUrl DefaultValue="https://YOUR_HOST/assets/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://YOUR_HOST/assets/icon-80.png"/>
+  <IconUrl DefaultValue="https://nyffels-open-source.github.io/outlook-owa-linker/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://nyffels-open-source.github.io/outlook-owa-linker/assets/icon-32.pngassets/icon-80.png"/>
 
   <SupportsPinning>false</SupportsPinning>
 
@@ -30,7 +30,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://YOUR_HOST/taskpane.html"/>
+        <SourceLocation DefaultValue="https://nyffels-open-source.github.io/outlook-owa-linker/taskpane.html"/>
       </DesktopSettings>
     </Form>
   </FormSettings>
@@ -104,14 +104,14 @@
 
     <Resources>
       <bt:Images>
-        <bt:Image id="resIcon16" DefaultValue="https://YOUR_HOST/assets/icon-16.png"/>
-        <bt:Image id="resIcon32" DefaultValue="https://YOUR_HOST/assets/icon-32.png"/>
-        <bt:Image id="resIcon80" DefaultValue="https://YOUR_HOST/assets/icon-80.png"/>
+        <bt:Image id="resIcon16" DefaultValue="https://nyffels-open-source.github.io/outlook-owa-linker/assets/icon-16.png"/>
+        <bt:Image id="resIcon32" DefaultValue="https://nyffels-open-source.github.io/outlook-owa-linker/assets/icon-32.png"/>
+        <bt:Image id="resIcon80" DefaultValue="https://nyffels-open-source.github.io/outlook-owa-linker/assets/icon-80.png"/>
       </bt:Images>
 
       <bt:Urls>
-        <bt:Url id="resFunctionsHtml" DefaultValue="https://YOUR_HOST/functions.html"/>
-        <bt:Url id="resTaskpaneHtml"   DefaultValue="https://YOUR_HOST/taskpane.html"/>
+        <bt:Url id="resFunctionsHtml" DefaultValue="https://nyffels-open-source.github.io/outlook-owa-linker/functions.html"/>
+        <bt:Url id="resTaskpaneHtml"   DefaultValue="https://nyffels-open-source.github.io/outlook-owa-linker/taskpane.html"/>
       </bt:Urls>
 
       <bt:ShortStrings>
