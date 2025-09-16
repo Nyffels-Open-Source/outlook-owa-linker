@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+  xsi:type="MailApp">
+
+  <Id>f3f50d0b-1a2b-4c5d-9e6f-abcdef123456</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Nyffels Dev</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="OWA Linker"/>
+  <Description DefaultValue="Copy an OWA link or open any item by ID/link."/>
+  <IconUrl DefaultValue="https://YOUR_HOST/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://YOUR_HOST/assets/icon-80.png"/>
+
+  <SupportsPinning>false</SupportsPinning>
+
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+
+  <Requirements>
+    <Sets DefaultMinVersion="1.8">
+      <Set Name="Mailbox"/>
+    </Sets>
+  </Requirements>
+
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://YOUR_HOST/taskpane.html"/>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+
+  <Permissions>ReadItem</Permissions>
+
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
+  </Rule>
+
+  <DisableEntityHighlighting>false</DisableEntityHighlighting>
+
+  <VersionOverrides
+    xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+    xsi:type="VersionOverridesV1_0">
+
+    <Requirements>
+      <bt:Sets DefaultMinVersion="1.8">
+        <bt:Set Name="Mailbox"/>
+      </bt:Sets>
+    </Requirements>
+
+    <Hosts>
+      <Host xsi:type="Mailbox">
+        <DesktopFormFactor>
+
+          <FunctionFile resid="resFunctionsHtml"/>
+
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="grpNyffels">
+                <Label resid="resGroupLabel"/>
+
+                <Control xsi:type="Button" id="btnCopyOwa">
+                  <Label resid="resBtnCopyOwaLabel"/>
+                  <Supertip>
+                    <Title resid="resBtnCopyOwaLabel"/>
+                    <Description resid="resBtnCopyOwaDesc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="resIcon16"/>
+                    <bt:Image size="32" resid="resIcon32"/>
+                    <bt:Image size="80" resid="resIcon80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction" FunctionName="copyOwaLink"/>
+                </Control>
+
+                <Control xsi:type="Button" id="btnOpenByIdPane">
+                  <Label resid="resBtnOpenByIdLabel"/>
+                  <Supertip>
+                    <Title resid="resBtnOpenByIdLabel"/>
+                    <Description resid="resBtnOpenByIdDesc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="resIcon16"/>
+                    <bt:Image size="32" resid="resIcon32"/>
+                    <bt:Image size="80" resid="resIcon80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="resTaskpaneHtml"/>
+                  </Action>
+                </Control>
+
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="resIcon16" DefaultValue="https://YOUR_HOST/assets/icon-16.png"/>
+        <bt:Image id="resIcon32" DefaultValue="https://YOUR_HOST/assets/icon-32.png"/>
+        <bt:Image id="resIcon80" DefaultValue="https://YOUR_HOST/assets/icon-80.png"/>
+      </bt:Images>
+
+      <bt:Urls>
+        <bt:Url id="resFunctionsHtml" DefaultValue="https://YOUR_HOST/functions.html"/>
+        <bt:Url id="resTaskpaneHtml"   DefaultValue="https://YOUR_HOST/taskpane.html"/>
+      </bt:Urls>
+
+      <bt:ShortStrings>
+        <bt:String id="resGroupLabel" DefaultValue="Nyffels Tools"/>
+        <bt:String id="resBtnCopyOwaLabel" DefaultValue="Copy OWA Link"/>
+        <bt:String id="resBtnOpenByIdLabel" DefaultValue="Open by ID"/>
+      </bt:ShortStrings>
+
+      <bt:LongStrings>
+        <bt:String id="resBtnCopyOwaDesc" DefaultValue="Copy a stable OWA deeplink to this message."/>
+        <bt:String id="resBtnOpenByIdDesc" DefaultValue="Paste an ItemId or OWA link and open it here (fallback to OWA if needed)."/>
+      </bt:LongStrings>
+    </Resources>
+
+  </VersionOverrides>
+</OfficeApp>

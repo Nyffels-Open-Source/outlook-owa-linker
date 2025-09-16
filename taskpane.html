@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <script src="./taskpane.js"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 14px; }
+    h1 { font-size: 16px; margin: 0 0 8px; }
+    .row { display: flex; gap: 8px; margin: 8px 0; }
+    input[type=text] { flex: 1; padding: 8px; border: 1px solid #ddd; border-radius: 8px; }
+    button { padding: 8px 12px; border: 0; border-radius: 8px; cursor: pointer; }
+    .primary { background: #2563eb; color: #fff; }
+    .ghost { background: #f3f4f6; }
+    .hint { color: #6b7280; font-size: 12px; margin-top: 8px; }
+    .ok { color: #16a34a; font-size: 12px; }
+    .err { color: #dc2626; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Open by ID</h1>
+  <div class="row">
+    <input id="input" type="text" placeholder="Paste OWA link or ItemId"/>
+    <button id="btnOpen" class="primary">Open</button>
+  </div>
+  <div class="row">
+    <button id="btnCopyCurrent" class="ghost">Copy current OWA link</button>
+    <button id="btnOpenCurrent" class="ghost">Open current here</button>
+  </div>
+  <div id="msg" class="hint">Accepts full OWA link (...?ItemID=...) or raw REST ItemId.</div>
+</body>
+</html>
