@@ -1,7 +1,8 @@
 {
   "name": "outlook-owa-linker",
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "validate-manifest": "npx office-addin-manifest validate manifest.xml"
   },
   "devDependencies": {
     "eslint": "^9.0.0"
